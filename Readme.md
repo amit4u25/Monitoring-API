@@ -20,7 +20,6 @@ create database employee_management
 
 + open `src/main/resources/application.properties`
 
-+ change `spring.datasource.username` and `spring.datasource.password` as per your mysql installation
 
 **2. Build and run the app using maven**
 
@@ -39,16 +38,17 @@ The app will start running at <http://localhost:8080>.
 
 ## Explore Rest APIs
 
-The app defines following CRUD APIs.
+The app defines following APIs.
 
-    GET /api/employees
+    GET /test/apps => Get list of all the Apps
+   
+    GET /test/tiers?appName=App1 => Get list of all the tiers it will Accept AppName in url param
+   
+    GET /test/nodes?appName=App1 => Get list of all the nodes of a App it will Accept AppName in url param
     
-    POST /api/employee
+    GET /test/metrics?appName=App1&webTier=''&nodeName= '' => Get metrics the App it will Accept AppName, webTier, andnodeName url param
     
-    GET /api/employee/{employeeId}
-    
-    PUT /api/employee/{employeeId}
-    
-    DELETE /api/employee/{employeeId}
+     
+   
 
 You can test them using postman or any other rest client.
